@@ -44,6 +44,9 @@ const PostPage = ({ frontmatter, slug, content }) => {
 		<Layout>
 			<Head>
 				<title>Next JS blog | {slug}</title>
+				<script
+					src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+					defer></script>
 			</Head>
 			<article className={styles["card-page"]}>
 				<h1 className={styles["post-title"]}>{title}</h1>
