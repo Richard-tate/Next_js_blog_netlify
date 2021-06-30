@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import marked from "marked";
 import Head from "next/head";
 import styles from "../../styles/CardPost.module.css";
+import { useEffect } from "react";
 
 export async function getStaticPaths() {
 	const files = fs.readdirSync(path.join("posts"));
@@ -39,6 +40,17 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 const PostPage = ({ frontmatter, slug, content }) => {
+	useEffect(() => {
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", (user) => {
+				if (!user) {
+					window.netlifyIdentity.on("login", () => {
+						document.location.href = "/admin/";
+					});
+				}
+			});
+		}
+	}, []);
 	const { title, date, cover_image } = frontmatter;
 	return (
 		<Layout>
