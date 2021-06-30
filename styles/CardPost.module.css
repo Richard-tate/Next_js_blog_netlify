@@ -1,0 +1,54 @@
+.card-page {
+	padding: 15px 30px;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.post-title {
+	margin: 10px 0;
+}
+
+.post-date {
+	background: #f4f4f4;
+	margin-bottom: 20px;
+	padding: 3px 10px;
+	border-radius: 3px;
+}
+.post_img {
+	width: 100%;
+	height: 450px;
+}
+.post_img img {
+	height: 100%;
+	width: 100%;
+	object-position: center;
+	object-fit: cover;
+}
+.post-body ul,
+.post-body ol {
+	font-size: 110%;
+	line-height: 2.3;
+	font-weight: bold;
+	margin: 10px 0;
+	padding-left: 1em;
+}
+
+.post-body pre {
+	background: #f4f4f4;
+	padding: 20px;
+	margin: 20px 0;
+	line-height: 2.3;
+	overflow-x: auto;
+}
+@media (min-width: 45em) {
+	.post-date {
+		max-width: 40%;
+	}
+	.card-page {
+		border: 1px solid rgba(221, 221, 221, 0.151);
+	}
+}
+@media (min-width: 90em) {
+	.post-date {
+		max-width: 25%;
+	}
+}
